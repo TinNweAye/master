@@ -29,6 +29,17 @@ $mail->smtpConnect([		//ignore certificate verification
    ]
 ]);
 
+
+//Send mail using gmail
+$mail->SMTPDebug = 2;
+$mail->IsSMTP(); // telling the class to use SMTP
+$mail->SMTPAuth = true; // enable SMTP authentication
+$mail->SMTPSecure = false; // sets the prefix to the servier
+$mail->Host = "ssl://smtp.gmail.com"; //  sets GMAIL as the SMTP server
+$mail->Port = 465; // set the SMTP port for the GMAIL server
+$mail->Username = "testbrycenmyanmar17@gmail.com"; // GMAIL username
+$mail->Password = "bcmm2018test"; // GMAIL password
+
 $servername = "localhost";
 $username = "root";
 $password = "";
