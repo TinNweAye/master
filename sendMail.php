@@ -67,7 +67,7 @@ $todaydate=date("Y-m-d")." "."00:00:00";
 
 
 try {
-		$sql="SELECT booking_id,user_id,user_name,booking_date,booking_time_from,booking_time_to,person,driver_name,driver_phone,car_type,car_number,pick_up_place,email,car_number FROM tbl_booking,employee_personal WHERE  user_id=employee_personal.employee_id AND tbl_booking.mail_flag=0 AND  booking_date='$todaydate' AND send_time='$curtimehr'";
+		$sql="";
 					
 		$result = $conn->query($sql);	
 			
