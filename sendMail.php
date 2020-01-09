@@ -10,7 +10,7 @@ require 'vendor/autoload.php';
 
 $mail = new PHPMailer(true);
 
-//Send mail using brycen-mail
+//Send mail using 
 $mail->SMTPDebug = 2;
 $mail->IsSMTP(); // telling the class to use SMTP
 $mail->SMTPAuth = true; // enable SMTP authentication
@@ -37,8 +37,8 @@ $mail->SMTPAuth = true; // enable SMTP authentication
 $mail->SMTPSecure = false; // sets the prefix to the servier
 $mail->Host = "ssl://smtp.gmail.com"; //  sets GMAIL as the SMTP server
 $mail->Port = 465; // set the SMTP port for the GMAIL server
-$mail->Username = "testbrycenmyanmar17@gmail.com"; // GMAIL username
-$mail->Password = "bcmm2018test"; // GMAIL password
+$mail->Username = "test@gmail.com"; // GMAIL username
+$mail->Password = ""; // GMAIL password
 
 $servername = "localhost";
 $username = "root";
@@ -75,60 +75,11 @@ try {
 			
 			foreach($result as $res){			
 				
-				$from = "brycen.myanmar.gcp.test@gmail.com";
+				$from = "test@gmail.com";
 				//$to = "tinnweaye@brycenmyanmar.com.mm";
 				$to = $res['email'];
-				$headers  = 'MIME-Version: 1.0' . "\r\n";
-				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-				$bookingid=$res['booking_id'];
-				$bookdate=$res['booking_date'];
-				$bookingDate=substr($bookdate,0,10);
-				$bookTimeF=$res['booking_time_from'];
-				$bookTimeFrom=substr($bookTimeF,11,5);
-				$bookTimeT=$res['booking_time_to'];
-				$bookTimeTo=substr($bookTimeT,11,5);
-				$UserName=$res['driver_name'];
-				$Phone=$res['driver_phone'];
-				$carno=$res['car_number'];
-				$noPerson=$res['person'];
-				$place=$res['pick_up_place'];
-
-				$subject = "Your Booking Time is Coming Soon!";
-
-				$body="<html><body>";
-				$body.="<div style=' width: 60%;margin: 10px 30% 10px 25%;border-radius: 40px;box-shadow:0px 0px 10px #CEB150; background: url(http://carbooking.cloudhr.co/app/webroot/img/landscape.jpg);background-size: 100% 100%;'>
-			   <img src='http://carbooking.cloudhr.co/app/webroot/img/bamawl.png' style='margin-top: 50px; margin-left: 50px;'>
-			    <form style='width:60%; margin:4% 15%;'>
-				<header>
-				<h3 style='color: #CEB150; font-family: 'Lucida Calligraphy';font-weight:bold;'>Booking Notification</h3>
-				</header>
-				<label class='col-sm-2' style='color: #CEB150;font-size: 15px;font-weight:bold;'>Booking Date </label>
-				<p style='font-weight:bold;color: black;'>$bookingDate</p>
-				<label class='col-sm-2' style='color: #CEB150;font-size: 15px;font-weight:bold;'>Booking Time </label>
-				<p style='font-weight:bold;color: black;'>$bookTimeFrom
-				~$bookTimeTo</p>
-
-				 <label class='col-sm-2' style='color: #CEB150;font-size: 15px;font-weight:bold;'>Driver Name </label>
-				<p style='font-weight:bold;color: black;'>$UserName
-				</p>
-				<label class='col-sm-2' style='color: #CEB150;font-size: 15px;font-weight:bold;'>Car Number </label>
-				<p style='font-weight:bold;color: black;'>$carno
-				</p>
-				<label class='col-sm-2' style='color: #CEB150;font-size: 15px;font-weight:bold;'>Phone Number  </label>
-				<p style='font-weight:bold;color: black;'>$Phone</p>
-				<label class='col-sm-2' style='color: #CEB150;font-size: 15px;font-weight:bold;'>Number of Person :</label>
-				<p style='font-weight:bold;color: black;'>$noPerson
-				</p>
-				<label class='col-sm-2' style='color: #CEB150;font-size: 15px;font-weight:bold;'>Pick Up Place </label>
-				<p style='font-weight:bold;color: black;'>$place</p>
 				
-				<span style='font-size: 14px;color: #ff3333;'>If you have change your plan, click link to login and cancel your booking:</span><a href='http://carbooking.cloudhr.co/BookingList?init=init' target='_blank' style='color:green;font-size: 13px;font-family:Lucida Calligraphy;font-weight: bold;'> Click Here </a><br><br>
 
-				<span style='font-size: 14px;color: black;'>More Information visit :</span><a href='http://brycenmyanmar.com.mm' target='_blank' id='fter' style='color:green;font-size: 13px;font-family:Lucida Calligraphy;font-weight: bold;'> Brycen Myanmar Co.,Ltd.</a><br><br><br><br>
-
-				</form>
-				</div>";
-				$body.="</html></body>";
 
 				$mail->isHTML(true);
 				$mail->AddAddress($to); //to 
