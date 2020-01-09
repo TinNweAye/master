@@ -1,0 +1,20 @@
+
+var c_name="<?php echo $this->params['controller']; ?>";
+	    $("li.uk").each(function() {
+			var text = $(this).find("a.textheader").attr('href');
+			var param = "<?php echo $this->webroot.$this->params['controller']; ?>";
+
+			if(c_name=='CarBooking' || c_name=='TimeBooking' ) {
+				$('#booking_header').css({'border-bottom': '3px solid #99ccff'});
+			}
+			 if(c_name=='BookingList'){
+				var txt = "<?php echo $this->params['controller'].'/'.$this->params['action']; ?>";
+				if(txt=='BookingList/Booking_update'){
+					$('#booking_header').css({'border-bottom': '3px solid #99ccff'});
+				}else{
+					$('#bookinglist_header').css({'border-bottom': '3px solid #99ccff'});
+				}
+			}else if(text.indexOf(param) !== -1) {
+				$(this).css({'border-bottom': '3px solid #99ccff'});
+			}
+		});	
