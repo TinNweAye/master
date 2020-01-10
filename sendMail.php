@@ -76,7 +76,7 @@ try {
 			foreach($result as $res){			
 				
 				$from = "test@gmail.com";
-				//$to = "tinnweaye@brycenmyanmar.com.mm";
+				//$to = "test@company.com.mm";
 				$to = $res['email'];
 				
 
